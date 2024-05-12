@@ -1,0 +1,12 @@
+.container {
+    margin-inline: 3%;
+    padding: 1%;
+    margin-block: 1%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid with minimum item width of 125px */
+    gap: 10px; /* Spacing between grid items */
+    justify-content: center;
+}
