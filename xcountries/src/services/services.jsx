@@ -8,7 +8,8 @@ const fetchCountries = async () => {
         // console.log("services.jsx fetchCountries debug data::", data);
         return data;
     } catch (error) {
-        console.error("Failed to fetch country details, having error as:: ", error);
+        console.error(error);
+        return [];
     }
 }
 

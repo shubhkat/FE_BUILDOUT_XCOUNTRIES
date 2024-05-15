@@ -13,7 +13,7 @@ const Flag = () => {
         const data = await fetchCountries();
         setFlagData(data);
       } catch (error) {
-        console.error("Error fetching xcountries data:", error);
+        console.error(error);
       }
     };
     fetchData();
