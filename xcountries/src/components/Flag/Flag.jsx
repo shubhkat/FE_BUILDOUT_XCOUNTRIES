@@ -8,10 +8,15 @@ const Flag = () => {
   const [flagData, setFlagData] = useState([]);
 
   useEffect(() => {
-    return async () => {
-      const data = await fetchCountries();
-      setFlagData(data);
-    }
+    const fetchData = async () => {
+      try {
+        const data = await fetchCountries();
+        setFlagData(data);
+      } catch (error) {
+        console.error("Error fetching xcountries data:", error);
+      }
+    };
+    fetchData();
   }, [])
 
   return (
