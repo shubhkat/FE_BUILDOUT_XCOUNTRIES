@@ -1,4 +1,4 @@
-import styles from "./Card.module.css"
+import "./Card.css"
 
 const Card = ({
     flagURL,
@@ -9,7 +9,7 @@ const Card = ({
 //   console.log("Card.jsx Card debug {flagURL, name, altName}::", {flagURL, name, altName});
 
   return (
-    <div className={styles.countryCard}>
+    <div className="countryCard">
         <img src={flagURL} alt={altName} width={100} height={100} />
         <h2>{name}</h2>
     </div>

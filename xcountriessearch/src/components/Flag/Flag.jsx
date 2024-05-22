@@ -42,7 +42,7 @@ const Flag = () => {
       <div className={styles.container}>
         <div className={styles.grid}>
           {dataToDisplay.length > 0 && dataToDisplay.map((item) => (
-            <Card flagURL={item.flags.png} name={item.name.common} altName={item.flags.alt} key={item.cca3} />
+            <Card flagURL={item.flags.png} name={item.name.common} altName={item.flags.alt} key={item.cca3}/>
           ))}
         </div>
       </div>
