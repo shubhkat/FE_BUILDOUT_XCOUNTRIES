@@ -21,9 +21,9 @@ const Flag = () => {
     fetchData();
   }, [])
 
-  const handleChange = async (event) => {
+  const handleChange = (event) => {
     const searchText = event.target.value;
-    const filteredData = await flagData.filter((item) => {
+    const filteredData = flagData.filter((item) => {
       const countryName = item.name.common.toLowerCase();
       const searchCountryText = searchText.toLowerCase();
       return countryName.includes(searchCountryText);
