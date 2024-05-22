@@ -1,4 +1,3 @@
-import React from "react";
 import Flag from "./components/Flag/Flag";
 
 function App() {
@@ -7,4 +6,4 @@ function App() {
   );
 }
 
-export default React.memo(App);
+export default App;

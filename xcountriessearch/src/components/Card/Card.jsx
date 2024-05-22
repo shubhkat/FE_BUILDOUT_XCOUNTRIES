@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-import React from "react";
 import styles from "./Card.module.css"
 
 const Card = ({
@@ -18,4 +16,4 @@ const Card = ({
   )
 }
 
-export default React.memo(Card);
+export default Card;

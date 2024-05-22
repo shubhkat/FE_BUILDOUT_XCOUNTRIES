@@ -32,7 +32,7 @@ const Flag = () => {
     setValue(searchText);
   }
 
-  const dataToDisplay = searchData.length > 0 ? searchData : flagData;
+  const dataToDisplay = value ? searchData : flagData;
 
   return (
     <div>
@@ -41,7 +41,7 @@ const Flag = () => {
       </div>
       <div className={styles.container}>
         <div className={styles.grid}>
-          {dataToDisplay.map((item) => (
+          {dataToDisplay.length > 0 && dataToDisplay.map((item) => (
             <Card flagURL={item.flags.png} name={item.name.common} altName={item.flags.alt} key={item.cca3} />
           ))}
         </div>
@@ -50,4 +50,4 @@ const Flag = () => {
   )
 }
 
-export default React.memo(Flag);
+export default Flag;
