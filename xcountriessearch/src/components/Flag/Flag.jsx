@@ -18,7 +18,9 @@ const Flag = () => {
         console.error(error);
       }
     };
-    fetchData();
+    (async function data () {
+      await fetchData();
+    })();
   }, [])
 
   const handleChange = (event) => {
