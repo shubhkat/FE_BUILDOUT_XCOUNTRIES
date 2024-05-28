@@ -8,14 +8,16 @@ const fetchCountries = async () => {
         //     return JSON.parse(cachedData);
         // }
         // const headers = {
-        //     'Cache-Control': 'max-age=3600', // Cache for 1 hour
+        //     'Cache-Control': 'max-age=60', // Cache for 1 minute
         // };
         // const response = await axios.get(url, { headers });
         const response = await axios.get(url);
-        const data = response.data;
-        // localStorage.setItem('countriesData', JSON.stringify(data));
-        // console.log("services.jsx fetchCountries debug data::", data);
-        return data;
+        if(response.status === 200) {
+            const data = await response.data;
+            // localStorage.setItem('countriesData', JSON.stringify(data));
+            // console.log("services.jsx fetchCountries debug data::", data);
+            return data;
+        }
     } catch (error) {
         console.error(error);
         return [];

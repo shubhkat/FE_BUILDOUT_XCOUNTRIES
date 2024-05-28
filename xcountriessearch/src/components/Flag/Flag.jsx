@@ -1,6 +1,6 @@
 import fetchCountries from "../../services/services";
 import React, { useState, useEffect } from "react";
-import styles from "./Flag.module.css";
+import "./Flag.css";
 import Card from "../Card/Card";
 
 const Flag = () => {
@@ -25,9 +25,9 @@ const Flag = () => {
 
   const handleChange = (event) => {
     const searchText = event.target.value;
+    const searchCountryText = searchText.toLowerCase();
     const filteredData = flagData.filter((item) => {
       const countryName = item.name.common.toLowerCase();
-      const searchCountryText = searchText.toLowerCase();
       return countryName.includes(searchCountryText);
     });
     setSearchData(filteredData);
@@ -38,11 +38,11 @@ const Flag = () => {
 
   return (
     <div>
-      <div className={styles.appBar}>
-        <input type="text" className={styles.search} placeholder="Search for countries..." onChange={handleChange} value={value} />
+      <div className="appBar">
+        <input type="text" className="search" placeholder="Search for countries..." onChange={handleChange} value={value} id="search"/>
       </div>
-      <div className={styles.container}>
-        <div className={styles.grid}>
+      <div className="container">
+        <div className="grid">
           {dataToDisplay.length > 0 && dataToDisplay.map((item) => (
             <Card flagURL={item.flags.png} name={item.name.common} altName={item.flags.alt} key={item.cca3}/>
           ))}
